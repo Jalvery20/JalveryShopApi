@@ -1,9 +1,12 @@
 const app=require("./app");
 const connectDatabase=require("./config/database")
 
-const cloudinary=require("cloudinary");
+const cloudinary=require("cloudinary")
 const path = require("path");
 
+
+//Setting up config file
+require('dotenv').config({ path: path.resolve(__dirname, './config.env') });
 
 //Handle uncaught exceptions
 process.on("uncaughtException",err=>{
@@ -11,8 +14,6 @@ process.on("uncaughtException",err=>{
   console.log(`Shutting down server due to uncaught exception`);
   process.exit(1)
 })
-  //Setting up config file
-require('dotenv').config({ path: path.resolve(__dirname, './config.env') });
 
 
 //Connecting to MongoDB Database
