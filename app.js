@@ -12,7 +12,7 @@ require('dotenv').config({ path: path.resolve(__dirname, './config.env') });
 const errorMiddleware=require("./middlewares/errors")
 
 app.use(function(req,res,next){
-    res.header("Access-Control-Allow-Origin","*")
+  res.setHeader('Access-Control-Allow-Origin', 'https://jalveryshop.onrender.com/*');
     res.setHeader("Access-Control-Allow-Methods","GET, POST, PUT, DELETE")
     res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept")
     next()
